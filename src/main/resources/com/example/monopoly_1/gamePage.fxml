@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ChoiceBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.SplitPane?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="728.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.monopoly_1.Controller_GamePage">
+   <children>
+      <SplitPane dividerPositions="0.4669603524229074" prefHeight="400.0" prefWidth="728.0">
+        <items>
+          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0">
+               <children>
+                  <ImageView fx:id="monopolyBoard_Image" fitHeight="338.0" fitWidth="345.0" layoutX="-3.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@images/board.png" />
+                     </image>
+                  </ImageView>
+                  <Label fx:id="player1_Label" layoutX="56.0" layoutY="348.0" text="Label" />
+                  <Label fx:id="player2_Label" layoutX="210.0" layoutY="348.0" text="Label" />
+                  <Label fx:id="player3_Label" layoutX="56.0" layoutY="375.0" text="Label" />
+                  <Label fx:id="player4_Label" layoutX="210.0" layoutY="375.0" text="Label" />
+               </children>
+            </AnchorPane>
+          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0">
+               <children>
+                  <SplitPane dividerPositions="0.7288306451612904" orientation="VERTICAL" prefHeight="398.0" prefWidth="385.0">
+                    <items>
+                      <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="100.0" prefWidth="160.0">
+                           <children>
+                              <SplitPane dividerPositions="0.4895397489539749" layoutY="1.0" prefHeight="286.0" prefWidth="384.0">
+                                <items>
+                                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0">
+                                       <children>
+                                          <SplitPane dividerPositions="0.21901408450704227" orientation="VERTICAL" prefHeight="285.0" prefWidth="184.0">
+                                            <items>
+                                              <AnchorPane fx:id="CardColorBackground_Pane" minHeight="0.0" minWidth="0.0" prefHeight="100.0" prefWidth="160.0">
+                                                   <children>
+                                                      <Text fx:id="place_Label" layoutX="16.0" layoutY="34.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Name" wrappingWidth="149.60000000000014" />
+                                                   </children>
+                                                </AnchorPane>
+                                              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="100.0" prefWidth="160.0">
+                                                   <children>
+                                                      <TextArea fx:id="cardDetails_TextArea" editable="false" layoutX="-1.0" prefHeight="219.0" prefWidth="184.0" />
+                                                   </children>
+                                                </AnchorPane>
+                                            </items>
+                                          </SplitPane>
+                                       </children>
+                                    </AnchorPane>
+                                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0">
+                                       <children>
+                                          <Button fx:id="buy_Button" disable="true" layoutX="30.0" layoutY="192.0" mnemonicParsing="false" onAction="#buy" text="Buy" />
+                                          <Button fx:id="sell_Button" disable="true" layoutX="120.0" layoutY="192.0" mnemonicParsing="false" onAction="#sell" text="Sell" />
+                                          <Button fx:id="roll_Button" layoutX="12.0" layoutY="21.0" mnemonicParsing="false" onAction="#rollDice" text="Roll" />
+                                          <ImageView fx:id="dice_Image" fitHeight="66.0" fitWidth="126.0" layoutX="78.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
+                                             <image>
+                                                <Image url="@images/dice.jpg" />
+                                             </image></ImageView>
+                                          <TextField fx:id="rollNumber_TextField" editable="false" layoutX="8.0" layoutY="53.0" prefHeight="26.0" prefWidth="44.0" />
+                                          <Button fx:id="endTurn_Button" disable="true" layoutX="64.0" layoutY="245.0" mnemonicParsing="false" onAction="#endTurn" text="End Turn" />
+                                          <ChoiceBox fx:id="properties_ChoiceBox" layoutX="21.0" layoutY="130.0" prefWidth="150.0" />
+                                       </children>
+                                    </AnchorPane>
+                                </items>
+                              </SplitPane>
+                           </children>
+                        </AnchorPane>
+                      <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="100.0" prefWidth="160.0">
+                           <children>
+                              <TextField fx:id="playerName_TextField" editable="false" layoutX="14.0" layoutY="14.0" text="Player Name" />
+                              <Text fx:id="balance_Label" layoutX="20.0" layoutY="65.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Balance: " />
+                              <ImageView fitHeight="105.0" fitWidth="131.0" layoutX="253.0" pickOnBounds="true" preserveRatio="true" />
+                              <Button fx:id="exitGame_Button" layoutX="306.0" layoutY="68.0" mnemonicParsing="false" onAction="#exitGame" text="Exit Game" />
+                              <Label fx:id="gameKey_Label" layoutX="262.0" layoutY="17.0" prefHeight="18.0" prefWidth="110.0" text="GameKey: ">
+                                 <font>
+                                    <Font size="10.0" />
+                                 </font>
+                              </Label>
+                              <Label fx:id="posOnBoard_Label" layoutX="19.0" layoutY="82.0" text="Position: " />
+                           </children></AnchorPane>
+                    </items>
+                  </SplitPane>
+               </children>
+            </AnchorPane>
+        </items>
+      </SplitPane>
+   </children>
+</AnchorPane>
